@@ -5,7 +5,8 @@
   padding: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -13,65 +14,57 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+:root {
+  --var1: #000;
+  --var2: #fff ;
+}
+
 header {
   padding: 100px 20px;
   background-color: #ddd;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 header h1 {
   color: #fff;
   font-weight: 700;
-  -webkit-transform: translate(0px, 120%);
-          transform: translate(0px, 120%);
-  opacity: 0;
+  font-size: 120px;
   -webkit-transition: all 0.8s ease;
   transition: all 0.8s ease;
-}
-header h1._active {
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
-  opacity: 1;
 }
 header h2 {
   font-weight: 600;
   color: #fff;
-  -webkit-transform: translate(0px, 120%);
-          transform: translate(0px, 120%);
-  opacity: 0;
   -webkit-transition: all 0.8s ease;
   transition: all 0.8s ease;
-}
-header h2._active {
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
-  opacity: 1;
-  -webkit-transition: all 0.8s ease 0.4s;
-  transition: all 0.8s ease 0.4s;
 }
 
 .main-info {
   overflow: hidden;
-  padding: 30px 10px;
-  background-color: #726e6e;
+  padding: 100px 10px;
+  background-color: rgb(114, 110, 110);
 }
 .main-info__text {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   font-size: 14px;
   font-weight: 500;
   color: #fff;
+  -webkit-transform: scale(0);
+          transform: scale(0);
   margin-bottom: 25px;
-}
-
-._anim-show {
-  -webkit-transform: translate(0, 120%);
-          transform: translate(0, 120%);
-  opacity: 0;
-  -webkit-transition: all 0.8s ease;
-  transition: all 0.8s ease;
-}
-
-._anim-show._active, ._active ._anim-show {
-  opacity: 1;
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
 }
 
 .team {
@@ -89,11 +82,10 @@ header h2._active {
 .team__item {
   padding: 20px 10px;
 }
-
 .member {
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
-  background-color: #726e6e;
+  background-color: rgb(114, 110, 110);
   opacity: 0.8;
   border-radius: 5px;
 }
@@ -101,21 +93,20 @@ header h2._active {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background-color: #ff9900;
+  background-color: rgb(255, 153, 0);
   margin-bottom: 15px;
-  -webkit-transform: scale(0);
-          transform: scale(0);
   -webkit-transition: all 0.8s ease;
   transition: all 0.8s ease;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 .member__name {
   text-align: center;
   font-size: 16px;
   font-weight: 500;
   text-transform: uppercase;
-  -webkit-transform: translate(0, 50%);
-          transform: translate(0, 50%);
-  opacity: 0;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -123,73 +114,67 @@ header h2._active {
   opacity: 1;
 }
 
-.member._active .member__photo {
+.member.show .member__photo {
   -webkit-transform: scale(1);
           transform: scale(1);
-}
-.member._active .member__name {
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
-  opacity: 1;
-  -webkit-transition: all 0.8s ease 0.2s;
-  transition: all 0.8s ease 0.2s;
 }
 
 .advantage {
   padding: 50px;
-  background-color: #726e6e;
+  background-color: rgb(114, 110, 110);
 }
 .advantage__item {
   color: #fff;
   font-weight: 500;
   font-size: 16px;
   margin-bottom: 20px;
-  -webkit-transform: translate(-120%, 0);
-          transform: translate(-120%, 0);
-  opacity: 0;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  -webkit-transform: scale(0);
+          transform: scale(0);
 }
 
-.advantage__list._active li:nth-child(1) {
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
-  opacity: 1;
-  -webkit-transition: all 0.8s ease 0s;
-  transition: all 0.8s ease 0s;
+.advantage__list.show .advantage__item:nth-child(1) {
+  -webkit-transition: all 0.5s ease 0.2s;
+  transition: all 0.5s ease 0.2s;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
-.advantage__list._active li:nth-child(2) {
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
-  opacity: 1;
-  -webkit-transition: all 0.8s ease 0.2s;
-  transition: all 0.8s ease 0.2s;
+
+.advantage__list.show .advantage__item:nth-child(2) {
+  -webkit-transition: all 0.5s ease 0.4s;
+  transition: all 0.5s ease 0.4s;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
-.advantage__list._active li:nth-child(3) {
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
-  opacity: 1;
-  -webkit-transition: all 0.8s ease 0.4s;
-  transition: all 0.8s ease 0.4s;
+
+.advantage__list.show .advantage__item:nth-child(3) {
+  -webkit-transition: all 0.5s ease 0.6s;
+  transition: all 0.5s ease 0.6s;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
-.advantage__list._active li:nth-child(4) {
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
-  opacity: 1;
-  -webkit-transition: all 0.8s ease 0.6s;
-  transition: all 0.8s ease 0.6s;
+
+.advantage__list.show .advantage__item:nth-child(4) {
+  -webkit-transition: all 0.5s ease 0.8s;
+  transition: all 0.5s ease 0.8s;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
-.advantage__list._active li:nth-child(5) {
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
-  opacity: 1;
-  -webkit-transition: all 0.8s ease 0.8s;
-  transition: all 0.8s ease 0.8s;
+
+.advantage__list.show .advantage__item:nth-child(5) {
+  -webkit-transition: all 0.5s ease 1s;
+  transition: all 0.5s ease 1s;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
-.advantage__list._active li:nth-child(6) {
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
-  opacity: 1;
-  -webkit-transition: all 0.8s ease 1s;
-  transition: all 0.8s ease 1s;
+
+.advantage__list.show .advantage__item:nth-child(6) {
+  -webkit-transition: all 0.5s ease 1.2s;
+  transition: all 0.5s ease 1.2s;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.show {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
