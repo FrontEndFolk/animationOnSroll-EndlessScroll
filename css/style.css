@@ -12,6 +12,7 @@ body {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #ddd;
 }
 
 :root {
@@ -82,6 +83,7 @@ header h2 {
 .team__item {
   padding: 20px 10px;
 }
+
 .member {
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
@@ -172,6 +174,16 @@ header h2 {
   transition: all 0.5s ease 1.2s;
   -webkit-transform: scale(1);
           transform: scale(1);
+}
+
+.new-section {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  background-color: rgb(114, 110, 110);
+  color: #fff;
+  margin-bottom: 50px;
 }
 
 .show {
